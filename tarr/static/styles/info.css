@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Konkhmer+Sleokchher&display=swap');
+
+:root{
+    --color-pri:#F1C712;
+    --color-pri2:#F2A202;
+    --color-sec:#001D4A;
+    --color-ter:rgb(215, 39, 33);
+    --colorshadow:rgba(132, 139, 200, 0.18);
+    --color-fond:#fff;
+    --color-text:#333;
+    --color-text-light:#787878;
+
+    --card-border-radius:2rem;
+    --border-radius-1:0.4rem;
+    --border-radius-2:0.8rem;
+    --border-radius-3:1.2rem;
+
+    --card-padding:1.8rem;
+    --padding1: 1.2rem;
+
+    --box-shadow: 0 2rem 3rem var(--box-shadow);
+}
+
+*{
+    margin:0;
+    padding:0;
+    outline:0;
+    appearance: none;
+    border:0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 14px;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Konkhmer Sleokchher', sans-serif;
+    font-size: 0.88rem;
+    background: var(--color-fond);
+    user-select: none;
+    overflow-x: hidden;
+}
+
+.container{
+    display: grid;
+    width: 96%;
+    margin: 0 auto;
+    gap: 1.8rem;
+    grid-template-columns: 14rem auto 23rem;
+}
+
+a{
+    color: var(--color-sec);
+}
+
+span{
+    color: var(--color-pri2);
+}
+
+img{
+    display: block;
+    width: 100%;
+}
+
+h1{
+    font-weight: 800;
+    font-size: 1.8rem;
+}
+
+h2{
+    font-size: 1.4rem;
+}
+
+h3{
+    font-size: 0.97rem;
+}
+
+aside{
+    height: 80vh;
+}
+
+aside .top{
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+    gap:0.8rem;
+}
+
+aside .logo img{
+    width: 2rem;
+    height: 2rem;
+}
+
+aside .close{
+    display: none;
+}
+/** SIDEBAR **/
+aside .side{
+    background: white;
+    display: flex;
+    flex-direction: column;
+    height: 86vh;
+    position: relative;
+    top: 3rem;
+}
+
+aisde h3{
+    font-weight: 500;
+}
+
+aside .side a{
+    display: flex;
+    color: var(--color-text);
+    margin-left: 2rem;
+    gap:1rem;
+    align-items: center;
+    position:relative;
+    height: 3.7rem;
+    transition: all 300ms ease;
+}
+
