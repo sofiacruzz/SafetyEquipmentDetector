@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,27 +15,15 @@
                     <img src="{% static 'sed.jfif' %}" class="logo" alt="">
                     <div class="tog" onclick="tog();"></div>
                     <ul class="navigation">
-                        {% if user.is_authenticated %}
-                        <li>
-                            <a href="/info">Inicio</a>
-                        </li>
-                        <li>
-                            <a href="/cam">Camara</a>
-                        </li>
-                        <li>
-                            <a href="/logout">cerrar sesión</a>
-                        </li>
-                        <{% else %}
                         <li>
                             <a href="/">Home</a>
                         </li> 
                         <li>
-                            <a href="/signin">Registro</a>
+                            <a href="/register">Registro</a>
                         </li>
                         <li>
                             <a href="/login">Inicio sesión</a>
                         </li>
-                        {% endif %}
                     </ul>
                 </nav>
             </header>
@@ -44,8 +33,7 @@
             <div class="content">
                 <div class="textbox">
                     <h1>SAFETY <span>EQUIPMENT</span> DETECTOR</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam atque nam quas voluptatem cum dolore
-                        praesentium facere dolores adipisci in minus odit molestias enim ipsum, amet magnam quis quidem quae?</p>
+                    <p> SED es un módulo detector de objetos, enfocados principalmente en la detección de cascos y chalecos antirreflejante dentro de las industrias portuarias. </p>
                         <button></button>
                     <a href="/login">Inicia Sesión</a>
                 </div>

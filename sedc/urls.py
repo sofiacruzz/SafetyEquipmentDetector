@@ -22,8 +22,6 @@ from django.views.generic.base import TemplateView
 from django.shortcuts import render
 from tarr import views
 
-
-
 def handler404(request, exception):
     if request.user.is_authenticated:
         print('True')
@@ -32,11 +30,10 @@ def handler404(request, exception):
         print('Fail')
         return render(request, '1404.html')
 
-
 urlpatterns = [
   path('', include('tarr.urls')),
   path('admin/', admin.site.urls),
-  path('', TemplateView.as_view(template_name='home.html'), name='home'),
+  path('home/', TemplateView.as_view(template_name='home.html'), name='home'),
   path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
   path('logout/', auth_views.LogoutView.as_view(template_name='logged_out.html'), name='logout'),
   path('password/reset/', auth_views.LoginView.as_view(template_name='login.html'), name='logout'),

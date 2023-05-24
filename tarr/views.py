@@ -17,12 +17,13 @@ from django.http import StreamingHttpResponse
 from django.views.decorators import gzip
 
 
-
 # Create your views here.
+def home(request):
+    return render(request, 'home.html')
+
 @login_required
 def index(request):
     return render(request, 'index.html')
-
 
 @login_required
 def list(request):
@@ -106,8 +107,6 @@ def fileupload(request):
         context = {'documents': documents}
     return render(request, 'fileupload.html', context)
 
-
-
 @csrf_exempt
 def upload_photo(request):
     if request.method == 'POST':
@@ -129,8 +128,6 @@ def upload_photo(request):
         return JsonResponse(response_data)
 
     return JsonResponse({'success': False})
-
-
 
 def is_ajax(request):
     return request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
@@ -155,7 +152,6 @@ def ajax(request):
         context = {'ajax_list': ajax_list}
     return render(request, 'ajax.html', {'ajax_list': ajax_list})
 
-
 @csrf_protect
 def getajax(request):
     if request.method == 'GET':
@@ -168,7 +164,6 @@ def getajax(request):
     else:
         return JsonResponse({'data': 'failure'})
 
-
 @csrf_protect
 def ajax_delete(request):
     if request.method == 'GET':
@@ -179,7 +174,6 @@ def ajax_delete(request):
             return JsonResponse({'data': 'success'})
     else:
         return JsonResponse({'data': 'failure'})
-
 
 @csrf_protect
 def register(request):
@@ -277,12 +271,10 @@ def upload_csv(request):
         messages.warning(request, "Unable to upload file. " + e)
         return redirect('/upload/csv/')
 
-
 @login_required
 def changePassword(request):
     print('changepasword')
     return render(request, 'change_password.html')
-
 
 @login_required
 def deleteFiles(request, id):
