@@ -1,54 +1,70 @@
+{#{% load static %}#}
+{#{% extends 'layout/login.html' %}#}
+{##}
+{#{% block body %}#}
+{#    <div class="container">#}
+{#        <div class="box">#}
+{#            <div class="header"><header><a href="/"><img src="" alt="logo"></a>
+</header>
+<p>Inicia Sesión</p></div>#}
+{#            <div class="card-body">#}
+{#                <form role="form" method="POST">#}
+{#                    {% csrf_token %}#}
+{#                    {% include 'includes/bs4_form_all.html' with form=form %}#}
+{#                    <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-sign-in"></i> Login</button>#}
+{#                </form>#}
+{#                <div class="text-center">#}
+{#                    <a class="d-block small mt-3" href="/register">Register an Account</a>#}
+{#                    <a class="d-block small" href="/password/reset">Forgot Password?</a>#}
+{#                </div>#}
+{#                <div class="card-header">#}
+{#                <p>#}
+{#                    <b>username </b>: gowthaman.nkl1@gmail.com <br>#}
+{#                    <b>password </b>: Welcome@123#}
+{#                </p>#}
+{#            </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#{% endblock %}#}
+
+
+{% extends 'layout/login.html' %}
+
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="stylesheet" href="{% static 'styles/log.css' %}">
-        <title>SED-Inicio Sesión</title>
-    </head>
-    <body>
-        {% block content %}
-            {%for message in messages%}
-                <div class="alert alert-{{message.tags}} alert-dissimible fade show" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="close">
-                    <span aria-hidden = "true">&times;</span>
-                    </button>   
+{% block body %}
+    <div id="layoutAuthentication">
+        <div id="layoutAuthentication_content">
+            <main>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-5">
+                            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
+                                <div class="card-body">
+                                    <form method="POST">
+                                        {% csrf_token %}
+                                        {% include 'includes/bs4_form_all.html' with form=form %}
+                                        <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                                            <a class="small" href="/password/reset">Forgot Password?</a>
+                                            <button type="submit" class="btn btn-primary">Login</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="card-footer text-center py-3">
+                                    <div class="small"><a href="/register">Need an account? Sign up!</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            {% endfor %}
-        <div class="container">
-            <div class="box">
-                <div class="header">
-                    <header><a href="/"><img src="{% static '../static/sed.jfif' %}" alt="logo"></a>
-                    </header>
-                    <p>Inicia Sesión</p>
-                </div>
-                <form action="" method="post">
-                    {% csrf_token %}
-                    <div class="input-box">
-                        <label for="username">Usuario</label>
-                        <input type="text" id ="username" name="username" required> 
-                        <i class="bx bxs-user"></i>
-                    </div>
-                    <div class="input-box">
-                        <label for="password">Contraseña</label>
-                        <input type="password" id ="pass1" name="pass1" required>
-                        <i class="bx bx-lock"></i> 
-                    </div>
-                    <div class="input-box">
-                        <input type="submit" class="input-submit" value="Iniciar Sesión"><a href="info/"></a> 
-                    </div>
-                    <div class="bottom">
-                        <span><a href="/signin">Registrate</a></span>
-                        <span><a href="/">¿Olvidaste tu contraseña?</a></span>
-                    </div>
-                </form>
-            </div>
-            <div class="wrap"></div>
+            </main>
         </div>
-        <script src="" async defer></script>
-        {% endblock %}
-    </body>
-</html>
+    </div>
+{% endblock %}
+{% block javascript %}
+    <script type="text/javascript">
+        $("#id_username").attr("placeholder", "Enter Username");
+        $("#id_password").attr("placeholder", "Enter Password");
+    </script>
+{% endblock %}

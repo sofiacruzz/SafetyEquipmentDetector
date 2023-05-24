@@ -1,22 +1,54 @@
-{% extends 'layouts/base.html' %}
 {% load static %}
-
-{% block content %}
-
-<section>
-    <div class="cir"></div>
-    <div class="content">
-        <div class="textbox">
-            <h1>SAFETY <span>EQUIPMENT</span> DETECTOR</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam atque nam quas voluptatem cum dolore
-                praesentium facere dolores adipisci in minus odit molestias enim ipsum, amet magnam quis quidem quae?</p>
-                <button></button>
-            <a href="/login">Inicia Sesión</a>
-        </div>
-        <div class="imgbox">
-            <img src="{% static '../static/EPP.png' %}" alt="">
-        </div>
-    </div>
-</section>
-
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SED</title>
+        <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+    </head>
+    <body>
+        <section>
+            <header>
+                <nav class="navbar">
+                    <img src="{% static 'sed.jfif' %}" class="logo" alt="">
+                    <div class="tog" onclick="tog();"></div>
+                    <ul class="navigation">
+                        <li>
+                            <a href="/">Home</a>
+                        </li> 
+                        <li>
+                            <a href="/register">Registro</a>
+                        </li>
+                        <li>
+                            <a href="/login">Inicio sesión</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+        </section>
+        <section>
+            <div class="cir"></div>
+            <div class="content">
+                <div class="textbox">
+                    <h1>SAFETY <span>EQUIPMENT</span> DETECTOR</h1>
+                    <p> SED es un módulo detector de objetos, enfocados principalmente en la detección de cascos y chalecos antirreflejante dentro de las industrias portuarias. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni odit repellendus veniam ea cum autem quis blanditiis sit dolores esse. </p>
+                        <button></button>
+                    <a href="/login">Inicia Sesión</a>
+                </div>
+                <div class="imgbox">
+                    <img src="{% static '../static/EPP.png' %}" alt="">
+                </div>
+            </div>
+        </section>
+        <script type="text/javascript">
+            function tog(){
+                var menutog = document.querySelector('.tog');
+                var navigation = document.querySelector('.navigation')
+                menutog.classList.toggle('active');
+                navigation.classList.toggle('active');
+            }
+        </script>  
+    </body>
+</html>
