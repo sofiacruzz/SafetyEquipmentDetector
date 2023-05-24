@@ -1,12 +1,14 @@
+{#{% load static %}#}
 {#{% extends 'layout/login.html' %}#}
 {##}
-{#{% load static %}#}
 {#{% block body %}#}
 {#    <div class="container">#}
-{#        <div class="card card-login mx-auto mt-5">#}
-{#            <div class="card-header">Login</div>#}
+{#        <div class="box">#}
+{#            <div class="header"><header><a href="/"><img src="" alt="logo"></a>
+</header>
+<p>Inicia Sesión</p></div>#}
 {#            <div class="card-body">#}
-{#                <form class="form-horizontal" role="form" method="POST">#}
+{#                <form role="form" method="POST">#}
 {#                    {% csrf_token %}#}
 {#                    {% include 'includes/bs4_form_all.html' with form=form %}#}
 {#                    <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-sign-in"></i> Login</button>#}
