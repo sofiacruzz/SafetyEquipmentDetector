@@ -4,6 +4,7 @@ from .tracker import *
 import numpy as np
 
 model = torch.hub.load(".\yolov5", 'custom', path = '.\model.pt', source='local')
+model.conf = 0.45
 
 
 
