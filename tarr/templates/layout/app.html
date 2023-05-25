@@ -9,12 +9,23 @@
         <title>Dashboard - SB Admin</title>
         {% load static %}
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-        <link href="{% static 'css/styles.css' %}" rel="stylesheet"/>
+        <link href="{% static 'static/styles.css' %}" rel="stylesheet"/>
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Custom styles for this template-->
         {% block stylesheet %}{% endblock %}
     </head>
-    <body class="sb-nav-fixed">
+    <body>
+        <div class="container">
+            <div class="navigation">
+                <ul>
+                    <li>
+                        <a href="">
+                            <span class="icon"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3" style="width: 100%; max-width: 80px;"><img src="./static/EPP.png" alt="Logo" style="max-width: 100%; height: auto;"></a>

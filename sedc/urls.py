@@ -34,6 +34,7 @@ urlpatterns = [
   path('', include('tarr.urls')),
   path('admin/', admin.site.urls),
   path('home/', TemplateView.as_view(template_name='home.html'), name='home'),
+  path('index/', TemplateView.as_view(template_name='index.html'), name='index'),
   path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
   path('logout/', auth_views.LogoutView.as_view(template_name='logged_out.html'), name='logout'),
   path('password/reset/', auth_views.LoginView.as_view(template_name='login.html'), name='logout'),
