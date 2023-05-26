@@ -20,6 +20,7 @@
 body {
   min-height: 100vh;
   overflow-x: hidden;
+  overflow: hidden;
 }
 
 .container {
@@ -32,6 +33,7 @@ body {
   position: fixed;
   width: 300px;
   height: 100%;
+  left: 0%;
   background: var(--naranja);
   border-left: 10px solid var(--naranja);
   transition: 0.5s;
@@ -44,7 +46,7 @@ body {
 .navigation ul {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 0px;
   width: 100%;
 }
 
@@ -243,6 +245,37 @@ body {
 }
 .details .recentOrders table tr td:nth-child(3) {
   text-align: center;
+}
+
+.video{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  border-radius: 40px;
+}
+.video-img img{
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 40px;
+  box-shadow: 0 7px 25px black;
+}
+.titulo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.icono{
+  font-size: 2rem;
+  margin-top: 20px;
+  margin-left: 10px;
+  color: var(--naranja);
+}
+.titulo h2{
+  margin-top: 20px;
+  
+  font-weight: bold;
 }
 /* ====================== Responsive Design ========================== */
 @media (max-width: 991px) {

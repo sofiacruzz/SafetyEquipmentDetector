@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Konkhmer Sleokcher', sans-serif;
+    overflow: hidden;
 }
 /*DISEÑO DEL HOME*/
 section {
