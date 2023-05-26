@@ -186,7 +186,10 @@ body {
 /* ================== Order Details List ============== */
 .details {
   position: relative;
-  width: 100%;
+  width: 60%;
+  justify-content: center;
+  left: 30%;
+  align-items: center;
   padding: 20px;
   display: flow-root;
   grid-template-columns: 2fr 1fr;
@@ -196,8 +199,8 @@ body {
 
 .details .recentOrders {
   position: relative;
-  display: grid;
-  min-height: 500px;
+  /*display: grid;
+  /*min-height: 500px;*/
   background: var(--white);
   padding: 20px;
   box-shadow: 0 7px 25px rgba(15, 7, 7, 0.08);
